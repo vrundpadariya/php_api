@@ -9,9 +9,9 @@ include "../config/config.php";
 $config = new Config();
 
 if ($_SERVER['REQUEST_METHOD'] == "POST") {
-    $serialnumber = $_POST['serialnumber'];
+    $id = $_POST['id'];
 
-    $res = $config->fetchsinglecardetail($serialnumber);
+    $res = $config->fetchsingleinvoice($id);
     $result = mysqli_fetch_assoc($res);
 
     $arr['data'] = $result;
